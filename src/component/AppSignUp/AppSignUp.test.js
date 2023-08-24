@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import App from "./App";
+import AppSignUp from "./AppSignUp";
 
-describe("<App />", () => {
+describe("<AppSignUp />", () => {
   test("it should mount", () => {
     expect(true).toEqual(true);
-    render(<App />);
+    render(<AppSignUp />);
 
-    const app = screen.getByTestId("App");
+    const appSignUp = screen.getByTestId("AppSignUp");
 
-    expect(app).toBeInTheDocument();
+    expect(appSignUp).toBeInTheDocument();
   });
 });

@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import App from "./App";
+import Home from "./Home";
 
-describe("<App />", () => {
+describe("<Home />", () => {
   test("it should mount", () => {
     expect(true).toEqual(true);
-    render(<App />);
+    render(<Home />);
 
-    const app = screen.getByTestId("App");
+    const home = screen.getByTestId("Home");
 
-    expect(app).toBeInTheDocument();
+    expect(home).toBeInTheDocument();
   });
 });

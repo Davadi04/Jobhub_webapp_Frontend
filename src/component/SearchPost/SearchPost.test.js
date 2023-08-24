@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import App from "./App";
+import SearchPost from "./SearchPost";
 
-describe("<App />", () => {
+describe("<SearchPost />", () => {
   test("it should mount", () => {
     expect(true).toEqual(true);
-    render(<App />);
+    render(<SearchPost />);
 
-    const app = screen.getByTestId("App");
+    const searchPost = screen.getByTestId("SearchPost");
 
-    expect(app).toBeInTheDocument();
+    expect(searchPost).toBeInTheDocument();
   });
 });
