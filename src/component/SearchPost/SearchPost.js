@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BsFillBookmarkFill, BsFillTrash3Fill } from "react-icons/bs";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { getJobsPost, saveItemFunc } from "../../action/jobs";
+import { getJobsPost, getViewItemPage, saveItemFunc } from "../../action/jobs";
 
 const SearchPost = () => {
   const navigate = useNavigate();
@@ -30,6 +30,12 @@ const SearchPost = () => {
     dispatch(saveItemFunc(savedObject));
     dispatch(getJobsPost());
   };
+
+  const handleViewItemPage = (id) => {
+    console.log(id);
+    dispatch(getViewItemPage(id, navigate));
+  };
+
   console.log(searchJobs);
   return (
     <Style.HomeBody>
@@ -88,7 +94,10 @@ const SearchPost = () => {
                       </Style.HomeBody_ListOfJobsInnerAvailuableIndividualText>
                     </Style.HomeBody_ListOfJobsInnerAvailuableIndividualDiv>
                   </Style.HomeBody_ListOfJobsTypeAndPayDescriptionInnerDiv>
-                  <Style.HomeBody_ListOfJobsInnerPostButton variant="contained">
+                  <Style.HomeBody_ListOfJobsInnerPostButton
+                    onClick={() => handleViewItemPage(val._id)}
+                    variant="contained"
+                  >
                     View
                   </Style.HomeBody_ListOfJobsInnerPostButton>
                 </Style.HomeBody_ListOfJobsTypeAndPayDescription>

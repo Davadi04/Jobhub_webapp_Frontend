@@ -453,6 +453,18 @@ export const Employer_ListOfJobsInnerBox = styled("div")({
   },
 });
 
+export const Employer_ListOfJobsInnerBoxSide = styled("div")({
+  width: "1150px",
+  height: "260px",
+  border: "1px solid lightgrey",
+  padding: "24px",
+  borderRadius: "8px",
+  marginBottom: "15px",
+  "@media (max-width : 75em)": {
+    width: "100%",
+  },
+});
+
 export const Employer_ListOfJobsInnerBoxRoleAndEdit = styled("div")({
   width: "1100px",
   height: "56px",

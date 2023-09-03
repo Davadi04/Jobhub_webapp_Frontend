@@ -30,7 +30,7 @@ const Applied = () => {
         <Style.Employer_ListOfJobsContainer>
           {user?.result.ApplySavedJobs.map((val, index) => {
             return (
-              <Style.Employer_ListOfJobsInnerBox>
+              <Style.Employer_ListOfJobsInnerBoxSide>
                 <Style.Employer_ListOfJobsInnerBoxRoleAndEdit>
                   <Style.Employer_ListOfJobsInnerBoxRole>
                     <Style.Employer_ListOfJobsInnerBoxImgContainer>
@@ -81,11 +81,8 @@ const Applied = () => {
                       </Style.Employer_ListOfJobsInnerAvailuableIndividualText>
                     </Style.Employer_ListOfJobsInnerAvailuableIndividualDiv>
                   </Style.Employer_ListOfJobsTypeAndPayDescriptionInnerDiv>
-                  <Style.Employer_ListOfJobsInnerPostButton variant="contained">
-                    View
-                  </Style.Employer_ListOfJobsInnerPostButton>
                 </Style.Employer_ListOfJobsTypeAndPayDescription>
-              </Style.Employer_ListOfJobsInnerBox>
+              </Style.Employer_ListOfJobsInnerBoxSide>
             );
           })}
         </Style.Employer_ListOfJobsContainer>

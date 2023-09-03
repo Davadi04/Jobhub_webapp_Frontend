@@ -80,7 +80,7 @@ export const SignUp_Header_Container = styled("div")({
 
 export const SignUp_SectionContainer_InputBox = styled("div")({
   width: "361.34px",
-  height: "164.27px",
+  height: "124.27px",
   "@media (max-width : 37.5em)": {
     width: "261.34px",
   },

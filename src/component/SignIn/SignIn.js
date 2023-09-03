@@ -91,18 +91,6 @@ const SignIn = () => {
           </Style.SignUp_SectionContainer_InputInnerBox>
         </Style.SignUp_SectionContainer_InputBox>
 
-        <Style.SignUp_ForgetPasswordDiv>
-          <Style.SignUp_ForgetPasswordInputDiv>
-            <Style.SignUp_ForgetPasswordInput type="radio" />
-            <Style.SignUp_ForgetPasswordText>
-              remember in 30 days
-            </Style.SignUp_ForgetPasswordText>
-          </Style.SignUp_ForgetPasswordInputDiv>
-
-          <Style.SignUp_ForgetPasswordLink>
-            forget password
-          </Style.SignUp_ForgetPasswordLink>
-        </Style.SignUp_ForgetPasswordDiv>
         {showSignError && (
           <Style.SignUp_Header
             style={{

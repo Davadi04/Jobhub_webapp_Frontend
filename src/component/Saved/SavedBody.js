@@ -7,7 +7,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdOutlineAttachMoney } from "react-icons/md";
-import { deleteSavedItem, getJobsPost } from "../../action/jobs";
+import {
+  deleteSavedItem,
+  getJobsPost,
+  getViewItemPage,
+} from "../../action/jobs";
 import { getProfileData } from "../../action/auth";
 const SavedBody = () => {
   const navigate = useNavigate();
@@ -25,6 +29,11 @@ const SavedBody = () => {
   }, []);
 
   console.log(user, isLoading);
+
+  const handleViewItemPage = (id) => {
+    console.log(id);
+    dispatch(getViewItemPage(id, navigate));
+  };
 
   return (
     <>
@@ -85,7 +94,10 @@ const SavedBody = () => {
                           </Style.Employer_ListOfJobsInnerAvailuableIndividualText>
                         </Style.Employer_ListOfJobsInnerAvailuableIndividualDiv>
                       </Style.Employer_ListOfJobsTypeAndPayDescriptionInnerDiv>
-                      <Style.Employer_ListOfJobsInnerPostButton variant="contained">
+                      <Style.Employer_ListOfJobsInnerPostButton
+                        onClick={() => handleViewItemPage(val._id)}
+                        variant="contained"
+                      >
                         View
                       </Style.Employer_ListOfJobsInnerPostButton>
                     </Style.Employer_ListOfJobsTypeAndPayDescription>

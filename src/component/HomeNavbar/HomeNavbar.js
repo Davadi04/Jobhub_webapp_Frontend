@@ -16,7 +16,7 @@ import {
 import { SignIn } from "../SignIn/style";
 import { Signin, getProfileById, getProfileData } from "../../action/auth";
 import { useParams } from "react-router-dom";
-import { getApplyJobs } from "../../action/jobs";
+import { getApplyJobs, getPostBySearch } from "../../action/jobs";
 import { BsBuildingCheck, BsBuildingFillCheck } from "react-icons/bs";
 import { MdOutlineSaveAlt } from "react-icons/md";
 
@@ -46,6 +46,14 @@ const HomeNavbar = ({
 
   const handleChangeIcon = () => {
     setToggle(!toggle);
+  };
+
+  const handleSearchItem = (e) => {
+    e.preventDefault();
+
+    if (search.searchInput) {
+      dispatch(getPostBySearch(search, navigate));
+    }
   };
 
   const handleLogout = () => {
@@ -159,7 +167,7 @@ const HomeNavbar = ({
               Saved Job
             </Style.HomeNavbar_HeadPara>
             {toggleNavHeader == "home" && (
-              <Style.HomeNavbar_InputAndButton>
+              <Style.HomeNavbar_InputAndButton onSubmit={handleSearchItem}>
                 <Style.HomeNavbar_Input
                   placeholder="Search By Role"
                   name="searchInput"

@@ -87,7 +87,7 @@ export const HomeNavbar_HeadSubPara = styled("h3")({
   },
 });
 
-export const HomeNavbar_InputAndButton = styled("div")({
+export const HomeNavbar_InputAndButton = styled("form")({
   width: "394px",
   height: "44px",
   "@media (max-width : 56.7em)": {
