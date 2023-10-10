@@ -9,6 +9,10 @@ const AppSignUp = ({ field }) => {
   const dispatch = useDispatch();
   const [showError, setShowError] = useState(false);
   const [showDataBaseError, setShowDatabaseError] = useState(false);
+  const [customerButtonText, setCustomerButtonText] =
+    useState("create an account");
+  const [employerButtonText, setEmployerButtonText] =
+    useState("create an account");
 
   console.log(field);
 
@@ -37,13 +41,13 @@ const AppSignUp = ({ field }) => {
   const dataError = authError;
 
   const handleCreateAccount = () => {
-    console.log("boy");
     if (field == "customer") {
       if (
         profileField.fullName &&
         profileField.email &&
         profileField.PassWord
       ) {
+        setCustomerButtonText("Loading...");
         dispatch(customerSignUp(profileField, navigate));
         setShowError(false);
       } else {
@@ -56,6 +60,7 @@ const AppSignUp = ({ field }) => {
         profileField.email &&
         profileField.PassWord
       ) {
+        setEmployerButtonText("Loading...");
         dispatch(employerSignUp(profileField, navigate));
         setShowError(false);
       } else {
@@ -151,7 +156,7 @@ const AppSignUp = ({ field }) => {
                 onClick={handleCreateAccount}
                 variant="contained"
               >
-                create an account
+                {customerButtonText}
               </Style.AppSignUp_SectionContainerButton>
 
               {showError && (
@@ -277,7 +282,7 @@ const AppSignUp = ({ field }) => {
                 onClick={handleCreateAccount}
                 variant="contained"
               >
-                create an account
+                {employerButtonText}
               </Style.AppSignUp_SectionContainerButton>
               {showError && (
                 <Style.AppSignUp_SectionBottomTextPopUp>

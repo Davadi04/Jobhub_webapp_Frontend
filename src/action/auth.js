@@ -35,7 +35,6 @@ export const employerSignUp = (profileField, navigate) => async (dispatch) => {
 export const Signin = (profileField, navigate) => async (dispatch) => {
   try {
     const { data } = await api.signIn(profileField);
-    console.log(data);
     dispatch({ type: AUTH, data });
 
     navigate("/");

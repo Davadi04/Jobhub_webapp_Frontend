@@ -17,6 +17,7 @@ const SignIn = () => {
 
   const [profileField, setProfileField] = useState(initialVariable);
   const [showSignError, setShowSignError] = useState(true);
+  const [buttonText, setButtonText] = useState("Sign in");
 
   const dataError = authError;
 
@@ -29,6 +30,7 @@ const SignIn = () => {
       authError == null
     ) {
       console.log("fghjk");
+      setButtonText("Loading...");
       dispatch(Signin(profileField, navigate));
       setShowSignError(true);
     } else if (
@@ -109,7 +111,7 @@ const SignIn = () => {
           onClick={(e) => handleSubmit(e)}
           variant="contained"
         >
-          Sign in
+          {buttonText}
         </Style.SignUp_SectionContainerButton>
 
         <Link
